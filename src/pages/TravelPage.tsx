@@ -1,12 +1,12 @@
-import { Download } from 'lucide-react'
-import { PageHero } from '@/components/common/PageHero'
-import { travelSections } from '@/data/travel'
-import type { TravelVideo } from '@/types/content'
+import { Download } from "lucide-react";
+import { PageHero } from "@/components/common/PageHero";
+import { travelSections } from "@/data/travel";
+import type { TravelVideo } from "@/types/content";
 
 function videoSrc(video: TravelVideo) {
-  return video.source === 'youtube'
+  return video.source === "youtube"
     ? `https://www.youtube.com/embed/${video.id}?rel=0`
-    : `https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`
+    : `https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`;
 }
 
 function VideoEmbed({ video, title }: { video: TravelVideo; title: string }) {
@@ -20,7 +20,7 @@ function VideoEmbed({ video, title }: { video: TravelVideo; title: string }) {
         allowFullScreen
       />
     </div>
-  )
+  );
 }
 
 export function TravelPage() {
@@ -28,26 +28,41 @@ export function TravelPage() {
     <div className="space-y-16">
       <PageHero
         title="Travel"
-        intro="A travel diary in film and photographs — trips, treks, and misadventures across three decades."
+        intro="A travel diary in film and photographs - trips, treks, and misadventures across three decades."
       />
 
       <div className="space-y-16">
         {travelSections.map((section) => (
-          <article key={section.id} className="mx-auto max-w-3xl space-y-6 border-t border-border pt-10 first:border-t-0 first:pt-0">
-            <h2 className="text-center text-2xl font-bold tracking-tight text-text sm:text-3xl">{section.heading}</h2>
+          <article
+            key={section.id}
+            className="mx-auto max-w-3xl space-y-6 border-t border-border pt-10 first:border-t-0 first:pt-0"
+          >
+            <h2 className="text-center text-2xl font-bold tracking-tight text-text sm:text-3xl">
+              {section.heading}
+            </h2>
 
-            {section.video && <VideoEmbed video={section.video} title={section.heading} />}
+            {section.video && (
+              <VideoEmbed video={section.video} title={section.heading} />
+            )}
 
             {section.videos && (
               <div className="grid gap-4 sm:grid-cols-3">
                 {section.videos.map((video, i) => (
-                  <VideoEmbed key={video.id} video={video} title={`${section.heading} ${i + 1}`} />
+                  <VideoEmbed
+                    key={video.id}
+                    video={video}
+                    title={`${section.heading} ${i + 1}`}
+                  />
                 ))}
               </div>
             )}
 
             {section.images && (
-              <div className={section.images.length > 1 ? 'grid gap-4 sm:grid-cols-2' : ''}>
+              <div
+                className={
+                  section.images.length > 1 ? "grid gap-4 sm:grid-cols-2" : ""
+                }
+              >
                 {section.images.map((image) => (
                   <img
                     key={image.src}
@@ -84,5 +99,5 @@ export function TravelPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }

@@ -1,10 +1,14 @@
-import { Play, ZoomIn } from 'lucide-react'
-import type { BookEntry } from '@/types/content'
+import { Play, ZoomIn } from "lucide-react";
+import type { BookEntry } from "@/types/content";
 
 interface BookCardProps {
-  book: BookEntry
-  onWatchTrailer: (video: { id: string; source: string; title: string }) => void
-  onZoomBonus: (image: { img: string; title: string }) => void
+  book: BookEntry;
+  onWatchTrailer: (video: {
+    id: string;
+    source: string;
+    title: string;
+  }) => void;
+  onZoomBonus: (image: { img: string; title: string }) => void;
 }
 
 export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
@@ -41,7 +45,10 @@ export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
         <button
           type="button"
           onClick={() =>
-            onWatchTrailer({ ...book.embedVideo!, title: `${book.title} — Trailer` })
+            onWatchTrailer({
+              ...book.embedVideo!,
+              title: `${book.title} - Trailer`,
+            })
           }
           className="flex items-center justify-center gap-2 border-t border-border bg-accent-soft px-4 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
         >
@@ -61,5 +68,5 @@ export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
         </button>
       )}
     </div>
-  )
+  );
 }

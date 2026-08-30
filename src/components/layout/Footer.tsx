@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import { primaryNav, moreNav } from '@/data/nav'
+import { NavLink } from "react-router-dom";
+import { primaryNav, moreNav } from "@/data/nav";
 
 export function Footer() {
   return (
@@ -11,13 +11,20 @@ export function Footer() {
               <span className="align-top text-xs">Mike</span>Nicholson
             </p>
             <p className="mt-2 text-sm text-white/60">
-              Hullo there — you've navigated your way to my website, where you can find my art,
-              books, films and other things of interest.
+              Hello there - you've navigated your way to my website, where you
+              can find my art, books, films and other things of interest.
             </p>
           </div>
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm sm:flex sm:gap-6">
+          <nav
+            aria-label="Footer"
+            className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm sm:flex sm:gap-6"
+          >
             {[...primaryNav, ...moreNav].map((item) => (
-              <NavLink key={item.to} to={item.to} className="text-white/70 hover:text-white">
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className="text-white/70 hover:text-white"
+              >
                 {item.label}
               </NavLink>
             ))}
@@ -28,5 +35,5 @@ export function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { SectionHeading } from '@/components/common/SectionHeading'
-import { bookList, heroBook, signingPhotos } from '@/data/books'
+import { Link } from "react-router-dom";
+import { SectionHeading } from "@/components/common/SectionHeading";
+import { bookList, heroBook, signingPhotos } from "@/data/books";
 
 export function BooksPage() {
   return (
@@ -8,12 +8,16 @@ export function BooksPage() {
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
         <img
           src={heroBook.coverImg}
-          alt="This Imaginary Feeling of Being Australian — book cover"
+          alt="This Imaginary Feeling of Being Australian - book cover"
           className="mx-auto max-h-[28rem] w-auto rounded-lg shadow-card"
         />
         <div className="text-center lg:text-left">
-          <h1 className="text-2xl font-bold text-text sm:text-3xl">{heroBook.quote}</h1>
-          <p className="mt-2 text-lg font-semibold text-accent">{heroBook.tagline}</p>
+          <h1 className="text-2xl font-bold text-text sm:text-3xl">
+            {heroBook.quote}
+          </h1>
+          <p className="mt-2 text-lg font-semibold text-accent">
+            {heroBook.tagline}
+          </p>
           <a
             href={heroBook.buyUrl}
             target="_blank"
@@ -28,7 +32,11 @@ export function BooksPage() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {signingPhotos.map((photo) => (
           <figure key={photo.src}>
-            <img src={photo.src} alt={photo.caption} className="w-full rounded-xl shadow-card" />
+            <img
+              src={photo.src}
+              alt={photo.caption}
+              className="w-full rounded-xl shadow-card"
+            />
             <figcaption className="mt-2 text-center text-sm text-text-muted">
               {photo.caption}
             </figcaption>
@@ -63,7 +71,11 @@ export function BooksPage() {
               )}
               <div className="flex flex-1 flex-col">
                 <h3 className="font-semibold text-text">{book.title}</h3>
-                {book.blurb && <p className="mt-1.5 flex-1 text-sm text-text-muted">{book.blurb}</p>}
+                {book.blurb && (
+                  <p className="mt-1.5 flex-1 text-sm text-text-muted">
+                    {book.blurb}
+                  </p>
+                )}
                 <div className="mt-3">
                   {book.buyUrl && (
                     <a
@@ -90,5 +102,5 @@ export function BooksPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
