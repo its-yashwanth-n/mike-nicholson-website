@@ -30,7 +30,7 @@ export default function App() {
           <Route path="environment" element={<EnvironmentPage />} />
           <Route path="rowing" element={<RowingPage />} />
           <Route path="rubbery-figures" element={<RubberyFiguresPage />} />
-          {/* <Route path="tokyo-olympics" element={<TokyoOlympicsPage />} /> */}
+          <Route path="tokyo-olympics" element={<TokyoOlympicsPage />} />
           <Route path="mubc-tokyo-trip" element={<MubcTokyoTripPage />} />
           <Route path="travel" element={<TravelPage />} />
           <Route path="links" element={<LinksPage />} />
