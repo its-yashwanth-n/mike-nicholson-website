@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-wordmark: 'Raleway', system-ui, sans-serif;
+
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-ink: #14110f;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --color-border: #e7e2dc;
+
+  --color-accent: #c2451d;
+  --color-accent-hover: #a83a18;
+  --color-accent-soft: #f4e3da;
+
+  --color-secondary: #0f766e;
+  --color-secondary-hover: #0c5c56;
+  --color-secondary-soft: #d9efec;
+
+  --shadow-card: 0 1px 2px rgba(20, 17, 15, 0.04), 0 8px 24px -12px rgba(20, 17, 15, 0.18);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .sr-only-focusable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sr-only-focusable:focus {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    z-index: 100;
+    background: var(--color-ink);
+    color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-card);
+  }
+}
