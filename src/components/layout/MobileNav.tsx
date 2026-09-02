@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { X } from 'lucide-react'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
-import { primaryNav, moreNav } from '@/data/nav'
+import { primaryNav } from '@/data/nav'
 
 interface MobileNavProps {
   open: boolean
@@ -61,7 +61,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           </button>
         </div>
         <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 overflow-y-auto">
-          {[...primaryNav, ...moreNav].map((item) => (
+          {primaryNav.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}

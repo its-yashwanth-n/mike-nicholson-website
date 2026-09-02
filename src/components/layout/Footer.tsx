@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { primaryNav, moreNav } from "@/data/nav";
+import { primaryNav } from "@/data/nav";
+import { usePageViews } from "@/hooks/usePageViews";
 
 export function Footer() {
+  const views = usePageViews();
+
   return (
     <footer className="border-t border-border bg-ink text-white/80">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -19,7 +22,7 @@ export function Footer() {
             aria-label="Footer"
             className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm sm:flex sm:gap-6"
           >
-            {[...primaryNav, ...moreNav].map((item) => (
+            {primaryNav.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
@@ -30,9 +33,10 @@ export function Footer() {
             ))}
           </nav>
         </div>
-        <p className="mt-8 text-xs text-white/40">
-          © {new Date().getFullYear()} Mike Nicholson. All rights reserved.
-        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-2 text-xs text-white/40">
+          <p>© {new Date().getFullYear()} Mike Nicholson. All rights reserved.</p>
+          {views !== null && <p>{views.toLocaleString()} views</p>}
+        </div>
       </div>
     </footer>
   );

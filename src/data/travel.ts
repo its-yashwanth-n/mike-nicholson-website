@@ -2,6 +2,16 @@ import type { TravelSection } from '@/types/content'
 
 export const travelSections: TravelSection[] = [
   {
+    id: 'my-hannover',
+    heading: 'My Hannover',
+    video: { id: '1186001154', source: 'vimeo' },
+  },
+  {
+    id: 'a-ferry-good-film-2026',
+    heading: 'A Ferry Good Film, 2026',
+    video: { id: '1182230793', source: 'vimeo' },
+  },
+  {
     id: 'choir-of-ormond-college-1987',
     heading: 'Choir of Ormond College, 1987',
     video: { id: '1169071235', source: 'vimeo' },
@@ -29,7 +39,7 @@ export const travelSections: TravelSection[] = [
   {
     id: 'timor',
     heading: 'Timor',
-    video: { id: '336323610', source: 'vimeo' },
+    video: { id: '1214906706', source: 'vimeo' },
     images: [
       { src: '/assets/images/travel/Timor1.jpg', alt: 'East Timor, 2000' },
       { src: '/assets/images/travel/Timor2.jpg', alt: 'East Timor, 2000' },

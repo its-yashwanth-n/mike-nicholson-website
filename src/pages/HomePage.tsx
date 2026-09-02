@@ -28,8 +28,9 @@ export function HomePage() {
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-text-muted">
           <span>Available at</span>
-          {stores.map((store) => (
+          {stores.map((store, i) => (
             <span key={store.name} className="flex items-center gap-2">
+              {i > 0 && <span>and</span>}
               <img src={store.logo} alt={store.name} className="h-6 w-auto object-contain" />
               <span>{store.location}</span>
             </span>
