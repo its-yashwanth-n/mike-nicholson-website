@@ -7,7 +7,7 @@ export const topLinks: LinkEntry[] = [
     url: 'https://heartheboatsing.com/2021/05/20/mike-nicholson-a-life-of-rowing-and-filming/',
   },
   { title: 'Books', url: '/books', internal: true },
-  { title: 'Environment', url: '/environment', internal: true },
+  // { title: 'Environment', url: '/environment', internal: true },
 ]
 
 export const linksBookPromo = {

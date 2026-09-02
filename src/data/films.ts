@@ -6,6 +6,10 @@ export const filmCategories: FilmCategory[] = [
   {
     name: 'Best of',
     films: [
+      { id: '1222266559', title: '2001: A Space Hospital', source: 'vimeo' },
+      { id: '1180478676', title: 'The Empire Makes a Nuisance of Itself', source: 'vimeo' },
+      { id: '1179932572', title: 'The E-Tag Saga', source: 'vimeo' },
+      { id: '1179558225', title: 'UFO', source: 'vimeo' },
       { id: '1135208607', title: 'Urban Gorilla', source: 'vimeo' },
       { id: '1016399714', title: 'Best Bookshops in the World', source: 'vimeo' },
       { id: '871770269', title: 'Venice', source: 'vimeo' },

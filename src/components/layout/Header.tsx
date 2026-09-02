@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ChevronDown, Menu } from 'lucide-react'
-import { primaryNav, moreNav } from '@/data/nav'
+import { Menu } from 'lucide-react'
+import { primaryNav } from '@/data/nav'
 import { MobileNav } from '@/components/layout/MobileNav'
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -11,24 +11,6 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [moreOpen, setMoreOpen] = useState(false)
-  const moreRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!moreOpen) return
-    const handleClick = (e: MouseEvent) => {
-      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false)
-    }
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMoreOpen(false)
-    }
-    document.addEventListener('mousedown', handleClick)
-    document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      document.removeEventListener('mousedown', handleClick)
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [moreOpen])
 
   return (
     // `backdrop-blur` must not live on this element: `backdrop-filter` on an ancestor creates a
@@ -46,40 +28,6 @@ export function Header() {
               {item.label}
             </NavLink>
           ))}
-          <div className="relative" ref={moreRef}>
-            <button
-              type="button"
-              onClick={() => setMoreOpen((v) => !v)}
-              aria-expanded={moreOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-accent-soft/60"
-            >
-              More
-              <ChevronDown className="size-4" aria-hidden="true" />
-            </button>
-            {moreOpen && (
-              <div
-                role="menu"
-                className="absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-border bg-surface py-1 shadow-card"
-              >
-                {moreNav.map((item) => (
-                  <NavLink
-                    key={item.to}
-                    to={item.to}
-                    role="menuitem"
-                    onClick={() => setMoreOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-4 py-2 text-sm ${
-                        isActive ? 'bg-accent-soft text-accent' : 'text-text hover:bg-accent-soft/60'
-                      }`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
         </nav>
 
         <button

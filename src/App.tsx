@@ -5,10 +5,10 @@ import { BooksPage } from "@/pages/BooksPage";
 import { ReadBookPage } from "@/pages/ReadBookPage";
 import { FilmsPage } from "@/pages/FilmsPage";
 import { ArtPage } from "@/pages/ArtPage";
-import { EnvironmentPage } from "@/pages/EnvironmentPage";
+// import { EnvironmentPage } from "@/pages/EnvironmentPage";
 import { RowingPage } from "@/pages/RowingPage";
 import { RubberyFiguresPage } from "@/pages/RubberyFiguresPage";
-import { TokyoOlympicsPage } from "@/pages/TokyoOlympicsPage";
+// import { TokyoOlympicsPage } from "@/pages/TokyoOlympicsPage";
 import { MubcTokyoTripPage } from "@/pages/MubcTokyoTripPage";
 import { TravelPage } from "@/pages/TravelPage";
 import { LinksPage } from "@/pages/LinksPage";
@@ -27,10 +27,10 @@ export default function App() {
           <Route path="book/:bookname" element={<ReadBookPage />} />
           <Route path="films" element={<FilmsPage />} />
           <Route path="art" element={<ArtPage />} />
-          <Route path="environment" element={<EnvironmentPage />} />
+          {/* <Route path="environment" element={<EnvironmentPage />} /> */}
           <Route path="rowing" element={<RowingPage />} />
           <Route path="rubbery-figures" element={<RubberyFiguresPage />} />
-          <Route path="tokyo-olympics" element={<TokyoOlympicsPage />} />
+          {/* <Route path="tokyo-olympics" element={<TokyoOlympicsPage />} /> */}
           <Route path="mubc-tokyo-trip" element={<MubcTokyoTripPage />} />
           <Route path="travel" element={<TravelPage />} />
           <Route path="links" element={<LinksPage />} />

@@ -57,6 +57,9 @@ export const adCards: Film[] = [
 ];
 
 export const films: Film[] = [
+  { id: "1214906706", title: "To Resist is to Win", source: "vimeo" },
+  { id: "1182230793", title: "A Ferry Good Film", source: "vimeo" },
+  { id: "1179932572", title: "The E-Tag Saga", source: "vimeo" },
   { id: "1135208607", title: "Urban Gorilla", source: "vimeo" },
   { id: "CnQKr_MbRJE", title: "London Olympics 2012", source: "youtube" },
   { id: "923250781", title: "Magpies vs. Lions", source: "vimeo" },
@@ -66,6 +69,9 @@ export const films: Film[] = [
 ];
 
 export const additionalFilms: Film[] = [
+  { id: "1222266559", title: "2001: A Space Hospital", source: "vimeo" },
+  { id: "1186001154", title: "My Hannover", source: "vimeo" },
+  { id: "1179558225", title: "UFO", source: "vimeo" },
   { id: "1169071235", title: "Choir of Ormond College, 1987", source: "vimeo" },
   {
     id: "1126557723",

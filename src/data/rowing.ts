@@ -56,6 +56,10 @@ export const rowingCategories: FilmCategory[] = [
     ],
   },
   {
+    name: '2026',
+    films: [],
+  },
+  {
     name: '2025',
     films: [
       {
