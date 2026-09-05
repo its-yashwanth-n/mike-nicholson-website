@@ -29,7 +29,7 @@ export function HomePage() {
         title="Michael Nicholson's World"
         intro="In print, film and on canvas, the Australian artist Michael Nicholson has created an impressive body of work."
       >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-text-muted">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-text-muted">
           <span>Available at</span>
           {stores.map((store, i) => (
             <span key={store.name} className="flex items-center gap-2">
