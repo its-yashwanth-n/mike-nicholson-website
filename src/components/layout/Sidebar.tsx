@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 import { NavLink } from "react-router-dom";
 import { BookOpen, Film, Home, Link as LinkIcon, Paintbrush, Plane, Sailboat, Smile } from "lucide-react";
 import { primaryNav } from "@/data/nav";
+import { NavExtras } from "@/components/layout/NavExtras";
 
 const icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/": Home,
@@ -25,7 +26,7 @@ export function Sidebar() {
         <span className="align-top text-sm">Mike</span>Nicholson
       </NavLink>
       <div className="mx-5 h-px shrink-0 bg-white/20" />
-      <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 px-3 py-4">
+      <nav aria-label="Primary" className="flex flex-col gap-1 px-3 py-4">
         {primaryNav.map((item) => {
           const Icon = icons[item.to];
           return (
@@ -45,6 +46,8 @@ export function Sidebar() {
           );
         })}
       </nav>
+      <div className="mx-5 mb-4 h-px shrink-0 bg-white/20" />
+      <NavExtras variant="dark" />
     </aside>
   );
 }

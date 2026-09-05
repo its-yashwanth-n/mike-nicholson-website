@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { X } from 'lucide-react'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import { primaryNav } from '@/data/nav'
+import { NavExtras } from '@/components/layout/NavExtras'
 
 interface MobileNavProps {
   open: boolean
@@ -76,6 +77,8 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             </NavLink>
           ))}
         </nav>
+        <div className="my-2 h-px shrink-0 bg-border" />
+        <NavExtras variant="light" onNavigate={onClose} />
       </div>
     </div>
   )
