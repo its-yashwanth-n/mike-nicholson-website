@@ -18,8 +18,8 @@ export function FilmGrid({ category, headingLevel = "h2" }: FilmGridProps) {
     title: string;
   } | null>(null);
   const Heading = headingLevel;
-
-  if (category.films.length === 0 && !category.links) return null;
+  const hasLinks = Boolean(category.links && category.links.length > 0);
+  const isEmpty = category.films.length === 0 && !hasLinks;
 
   return (
     <section
@@ -51,7 +51,7 @@ export function FilmGrid({ category, headingLevel = "h2" }: FilmGridProps) {
         </div>
 
         {category.films.length > 0 && (
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3">
             {category.films.map((film, index) => (
               <FilmCard
                 key={`${film.id ?? film.img}-${index}`}
@@ -63,9 +63,9 @@ export function FilmGrid({ category, headingLevel = "h2" }: FilmGridProps) {
           </div>
         )}
 
-        {category.links && category.links.length > 0 && (
+        {hasLinks && (
           <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {category.links.map((link) => (
+            {category.links!.map((link) => (
               <li key={link.url}>
                 <ExternalLinkCard
                   title={link.title}
@@ -76,6 +76,18 @@ export function FilmGrid({ category, headingLevel = "h2" }: FilmGridProps) {
               </li>
             ))}
           </ul>
+        )}
+
+        {isEmpty && (
+          <p
+            className={`rounded-xl border border-dashed px-4 py-6 text-center text-sm ${
+              category.bgUrl
+                ? "border-white/30 text-white/70"
+                : "border-border text-text-muted"
+            }`}
+          >
+            More from {category.name} coming soon.
+          </p>
         )}
       </div>
 

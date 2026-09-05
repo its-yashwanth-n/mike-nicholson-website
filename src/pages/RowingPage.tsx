@@ -1,13 +1,13 @@
-import { PageHero } from '@/components/common/PageHero'
-import { FilmGrid } from '@/components/common/FilmGrid'
-import { YumpuEmbed } from '@/components/common/YumpuEmbed'
-import { rowingCategories, lifeOfRowingUrl } from '@/data/rowing'
+import { PageHero } from "@/components/common/PageHero";
+import { FilmGrid } from "@/components/common/FilmGrid";
+import { YumpuEmbed } from "@/components/common/YumpuEmbed";
+import { rowingCategories, lifeOfRowingUrl } from "@/data/rowing";
 
 function slugify(name: string) {
   return name
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 export function RowingPage() {
@@ -18,11 +18,13 @@ export function RowingPage() {
         intro={
           <>
             <p>
-              If you&rsquo;re after films of Melbourne University Boat Club [MUBC] training and
-              racing since 1955 to the present day you&rsquo;ve come to the right place. This is
-              virtually the entire collection filmed by Harvey Nicholson from &rsquo;56 to
-              &rsquo;84 and Mike Nicholson from &rsquo;78 to this year. Just scroll down to the
-              year you&rsquo;re interested in &mdash; or jump straight there below.
+              If you&rsquo;re after films of Melbourne University Boat Club
+              [MUBC] training and racing since 1955 to the present day
+              you&rsquo;ve come to the right place. This is virtually the entire
+              collection filmed by Harvey Nicholson from &rsquo;56 to &rsquo;84
+              and Mike Nicholson from &rsquo;78 to this year. Just scroll down
+              to the year you&rsquo;re interested in &mdash; or jump straight
+              there below.
             </p>
             <a
               href={lifeOfRowingUrl}
@@ -36,7 +38,10 @@ export function RowingPage() {
         }
       />
 
-      <nav aria-label="Jump to year" className="flex flex-wrap gap-2 border-y border-border py-4">
+      <nav
+        aria-label="Jump to year"
+        className="flex flex-wrap gap-2 border-y border-border py-4"
+      >
         {rowingCategories.map((category) => (
           <a
             key={category.name}
@@ -49,9 +54,13 @@ export function RowingPage() {
       </nav>
 
       {rowingCategories.map((category) => (
-        <div key={category.name} id={slugify(category.name)} className="scroll-mt-24">
+        <div
+          key={category.name}
+          id={slugify(category.name)}
+          className="scroll-mt-24"
+        >
           <FilmGrid category={category} />
-          {category.name === '2017-2019' && (
+          {category.name === "2017-2019" && (
             <div className="mt-6 max-w-2xl">
               <YumpuEmbed id="ekEf2oXUh74nxBg9" title="The New Idea" />
             </div>
@@ -59,5 +68,5 @@ export function RowingPage() {
         </div>
       ))}
     </div>
-  )
+  );
 }
