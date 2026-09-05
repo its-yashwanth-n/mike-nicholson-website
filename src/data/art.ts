@@ -22,5 +22,5 @@ export const galleryImages = [
   { src: '/assets/images/art/art_image_2.png', alt: 'Artwork 2' },
   { src: '/assets/images/art/exhib11.jpg', alt: 'Exhibition artwork' },
   { src: '/assets/images/art/art_image_4.jpeg', alt: 'Artwork 4' },
-  { src: '/assets/images/art/PHOTOG.jpg', alt: 'Photography' },
+  { src: '/assets/images/art/QueenPhoto.jpg', alt: 'Photography' },
 ]

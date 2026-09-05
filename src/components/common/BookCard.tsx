@@ -14,7 +14,7 @@ interface BookCardProps {
 export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card">
-      <div className="border-b border-border bg-secondary/10 px-4 py-3 text-center">
+      <div className="border-b border-border bg-bg px-4 py-3 text-center">
         <h3 className="text-base font-semibold text-text">{book.title}</h3>
         {book.buyUrl && (
           <a
