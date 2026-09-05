@@ -1,8 +1,12 @@
+import type { Film } from '@/types/content'
+
 export type RadioSpeaker = 'host' | 'mike'
 
 export type RadioBlock =
   | { type: 'line'; speaker: RadioSpeaker; text: string }
   | { type: 'link'; href: string }
+  | { type: 'video'; film: Film }
+  | { type: 'spotify'; href: string }
   | { type: 'images'; items: { src: string; alt: string }[] }
 
 const IMG = '/assets/images/brissy/radio'
@@ -40,7 +44,7 @@ export const radioTranscript: RadioBlock[] = [
   { type: 'line', speaker: 'mike', text: 'Not so, simply cut and paste this into your Cox Box and the whole crew can hear, loud and clear.' },
   { type: 'line', speaker: 'host', text: 'Of course. So, let’s get back to the Quad issue, what are you getting at?' },
   { type: 'line', speaker: 'mike', text: 'Well l said it already, it’s all there.' },
-  { type: 'link', href: 'https://vimeo.com/827546741?fl=pl&fe=sh' },
+  { type: 'video', film: { id: '827546741', title: 'Champion Lakes, 2023', source: 'vimeo' } },
   {
     type: 'line',
     speaker: 'host',
@@ -91,7 +95,7 @@ export const radioTranscript: RadioBlock[] = [
       { src: `${IMG}/radio-6.jpg`, alt: 'Another concept painting of the King Street Bridge greened with rainforest planting' },
     ],
   },
-  { type: 'link', href: 'https://youtu.be/zz45AJZ1eeA' },
+  { type: 'video', film: { id: 'zz45AJZ1eeA', title: 'Greening Yarra Bridges', source: 'youtube' } },
   {
     type: 'line',
     speaker: 'host',
@@ -125,7 +129,7 @@ export const radioTranscript: RadioBlock[] = [
     speaker: 'host',
     text: 'Oh my gosh, this will inspire rowing wives all around the world! Did Mercantile Radio really leave that in? Their days are numbered! Ion defected from Romania and rowed in the seven seat of the Australian eight that won gold in 1986!',
   },
-  { type: 'link', href: 'https://open.spotify.com/episode/3pGSyhrqg4cahaKCi5GpI6' },
+  { type: 'spotify', href: 'https://open.spotify.com/episode/3pGSyhrqg4cahaKCi5GpI6' },
   {
     type: 'line',
     speaker: 'mike',
@@ -145,7 +149,7 @@ export const radioTranscript: RadioBlock[] = [
     text: 'He simply sent an email saying, ‘Uni High is terminated,’ without having the guts to phone me, reply to my emails, or even introduce himself to the Uni High students who rowed out of YYRC.',
   },
   { type: 'line', speaker: 'host', text: 'I thought YYRC wanted to encourage school rowing? Was he angry about the music you used in some of your films?' },
-  { type: 'link', href: 'https://youtu.be/u_7xHJzZo04' },
+  { type: 'video', film: { id: 'u_7xHJzZo04', title: 'The Barwon River', source: 'youtube' } },
   {
     type: 'line',
     speaker: 'mike',
@@ -169,7 +173,7 @@ export const radioTranscript: RadioBlock[] = [
     text: 'So, you really want Australian rowing to go forwards and not backwards? Many thanks for this interview. What do you think of the new management at Mubc?',
   },
   { type: 'line', speaker: 'mike', text: 'Will be excellent.' },
-  { type: 'link', href: 'https://youtu.be/NF5cE4wggT4' },
+  { type: 'video', film: { id: 'NF5cE4wggT4', title: '776BC Backwards Vs Forwards', source: 'youtube' } },
   { type: 'line', speaker: 'host', text: 'By the way, what happened with your idea for BC776 to produce Mubc tea towels?' },
   { type: 'line', speaker: 'mike', text: 'Didn’t reply to my email.' },
   { type: 'line', speaker: 'host', text: 'That’s understandable because they didn’t have computers in 776 BC.' },

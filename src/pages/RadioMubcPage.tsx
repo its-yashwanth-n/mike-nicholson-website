@@ -1,17 +1,15 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { PageHero } from '@/components/common/PageHero'
 import { ExternalLinkCard } from '@/components/common/ExternalLinkCard'
+import { SpotifyEmbed } from '@/components/common/SpotifyEmbed'
+import { FilmCard } from '@/components/common/FilmCard'
+import { VideoModal } from '@/components/common/VideoModal'
 import { radioTranscript, type RadioBlock } from '@/data/radioMubc'
+import type { Film } from '@/types/content'
 
-function linkLabel(href: string) {
-  if (href.includes('vimeo.com')) return `Watch on Vimeo — ${href}`
-  if (href.includes('youtu.be') || href.includes('youtube.com')) return `Watch on YouTube — ${href}`
-  if (href.includes('spotify.com')) return `Listen on Spotify — ${href}`
-  return href
-}
-
-function Block({ block }: { block: RadioBlock }) {
+function Block({ block, onOpenVideo }: { block: RadioBlock; onOpenVideo: (film: Film) => void }) {
   switch (block.type) {
     case 'line': {
       const isHost = block.speaker === 'host'
@@ -29,7 +27,15 @@ function Block({ block }: { block: RadioBlock }) {
       )
     }
     case 'link':
-      return <ExternalLinkCard title={linkLabel(block.href)} url={block.href} compact />
+      return <ExternalLinkCard title={block.href} url={block.href} compact />
+    case 'video':
+      return (
+        <div className="max-w-sm">
+          <FilmCard film={block.film} onOpenVideo={onOpenVideo} onOpenImage={() => {}} />
+        </div>
+      )
+    case 'spotify':
+      return <SpotifyEmbed href={block.href} title="MUBC Radio interview on Spotify" />
     case 'images':
       return (
         <div className={`grid gap-3 ${block.items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
@@ -47,6 +53,8 @@ function Block({ block }: { block: RadioBlock }) {
 }
 
 export function RadioMubcPage() {
+  const [openVideo, setOpenVideo] = useState<Film | null>(null)
+
   return (
     <div className="space-y-12">
       <PageHero title="Radio MUBC" intro="A special guest interview with Mike Nicholson.">
@@ -61,9 +69,11 @@ export function RadioMubcPage() {
 
       <article className="mx-auto max-w-3xl space-y-4">
         {radioTranscript.map((block, i) => (
-          <Block key={i} block={block} />
+          <Block key={i} block={block} onOpenVideo={setOpenVideo} />
         ))}
       </article>
+
+      <VideoModal film={openVideo} onClose={() => setOpenVideo(null)} />
     </div>
   )
 }

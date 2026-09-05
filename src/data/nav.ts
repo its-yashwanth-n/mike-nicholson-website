@@ -8,7 +8,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Rowing', to: '/rowing' },
   { label: 'Rubbery Figures', to: '/rubbery-figures' },
   { label: 'Travel', to: '/travel' },
-  // Hidden for now — uncomment (and restore the matching <Route> in App.tsx) to bring back.
+  // Hidden for now - uncomment (and restore the matching <Route> in App.tsx) to bring back.
   // { label: 'Environment', to: '/environment' },
   // { label: 'Tokyo Olympics', to: '/tokyo-olympics' },
   { label: 'Links', to: '/links' },
