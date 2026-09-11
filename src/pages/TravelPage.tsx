@@ -28,7 +28,7 @@ export function TravelPage() {
     <div className="space-y-16">
       <PageHero
         title="Travel"
-        intro="A travel diary in film and photographs - trips, treks, and misadventures across three decades."
+        intro="A travel diary in film and photographs - trips, treks, and adventures across three decades."
       />
 
       <div className="space-y-16">
