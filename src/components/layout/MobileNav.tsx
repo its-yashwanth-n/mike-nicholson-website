@@ -45,9 +45,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Site menu"
-        className="absolute inset-y-0 right-0 flex w-[85vw] max-w-sm flex-col bg-surface p-5 shadow-card"
+        className="absolute inset-y-0 right-0 flex w-[85vw] max-w-sm flex-col overflow-y-auto bg-surface p-5 shadow-card"
       >
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex shrink-0 items-center justify-between">
           <span className="font-wordmark text-xl font-light tracking-wide text-text">
             <span className="text-sm align-top">Mike</span>Nicholson
           </span>
@@ -61,7 +61,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             <X className="size-6" aria-hidden="true" />
           </button>
         </div>
-        <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 overflow-y-auto">
+        <nav aria-label="Primary" className="flex flex-col gap-1">
           {primaryNav.map((item) => (
             <NavLink
               key={item.to}
