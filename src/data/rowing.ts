@@ -97,7 +97,7 @@ export const rowingCategories: FilmCategory[] = [
     ],
   },
     {
-    name: "2025",
+    name: "2026",
     films: [
       {
         id: "1232723967",
