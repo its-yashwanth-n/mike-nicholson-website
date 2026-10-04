@@ -96,6 +96,16 @@ export const rowingCategories: FilmCategory[] = [
       },
     ],
   },
+    {
+    name: "2025",
+    films: [
+      {
+        id: "1232723967",
+        title: "MUBC Annual Dinner and Rowing Victoria 150th celebration",
+        source: "vimeo",
+      },
+    ],
+  },
   {
     name: "2025",
     films: [
