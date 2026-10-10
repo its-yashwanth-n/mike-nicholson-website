@@ -69,23 +69,15 @@ export const films: Film[] = [
 ];
 
 export const additionalFilms: Film[] = [
+  { id: "1232723967", title: "MUBC Annual Dinner and Rowing Victoria 150th celebration", source: "vimeo",},
   { id: "1222266559", title: "2001: A Space Hospital", source: "vimeo" },
   { id: "1186001154", title: "My Hannover", source: "vimeo" },
   { id: "1179558225", title: "UFO", source: "vimeo" },
   { id: "1169071235", title: "Choir of Ormond College, 1987", source: "vimeo" },
   {
-    id: "1126557723",
-    title: "Melbourne University Boat Club Annual Dinner 2025",
-    source: "vimeo",
-  },
-  {
     id: "1010049497",
     title: "Liberty, equality, fraternity",
     source: "vimeo",
-    docLink: {
-      label: "Film inquiry transcript",
-      href: "https://docs.google.com/document/d/1zVucyu9TRH2AxVLMBIOCI0cMpeL37L1a/edit?usp=sharing&ouid=117364602023783316252&rtpof=true&sd=true",
-    },
   },
   {
     id: "1038467203",

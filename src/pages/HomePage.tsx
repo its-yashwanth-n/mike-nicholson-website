@@ -65,31 +65,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section>
-        <SectionHeading>Advertisements</SectionHeading>
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3">
-          {adCards.map((ad, i) => (
-            <button
-              key={ad.id ?? i}
-              type="button"
-              onClick={() => setOpenVideo(ad)}
-              className="group overflow-hidden rounded-xl border border-border bg-surface text-left shadow-card"
-            >
-              <span className="block aspect-video overflow-hidden">
-                <img
-                  src={ad.img}
-                  alt=""
-                  className="size-full object-cover transition-transform group-hover:scale-105"
-                />
-              </span>
-              <span className="block px-3 py-2 text-sm font-medium text-text">
-                {ad.title}
-              </span>
-            </button>
-          ))}
-        </div>
-      </section>
-
+      <FilmGrid category={{ name: "Advertisements", films: adCards }} />
       <FilmGrid category={{ name: "Films", films }} />
       <FilmGrid category={{ name: "More to Watch", films: additionalFilms }} />
       <FilmGrid

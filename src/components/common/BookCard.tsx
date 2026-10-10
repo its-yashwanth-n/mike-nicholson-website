@@ -32,7 +32,7 @@ export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
         href={book.buyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex justify-center bg-ink/5 p-4"
+        className="flex flex-1 items-center justify-center bg-ink/5 p-4"
       >
         <img
           src={book.coverImg}
@@ -40,7 +40,6 @@ export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
           className="h-56 w-auto rounded-md object-contain shadow-card"
         />
       </a>
-
       {book.embedVideo && (
         <button
           type="button"
@@ -56,7 +55,6 @@ export function BookCard({ book, onWatchTrailer, onZoomBonus }: BookCardProps) {
           Watch trailer
         </button>
       )}
-
       {book.bonusImage && (
         <button
           type="button"
