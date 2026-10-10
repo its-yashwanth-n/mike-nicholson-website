@@ -56,7 +56,7 @@ export function RadioMubcPage() {
   const [openVideo, setOpenVideo] = useState<Film | null>(null)
 
   return (
-    <div className="space-y-12">
+    <div className="mx-auto max-w-3xl space-y-12">
       <PageHero title="Radio MUBC" intro="A special guest interview with Mike Nicholson.">
         <Link
           to="/brissy-32"
@@ -67,7 +67,7 @@ export function RadioMubcPage() {
         </Link>
       </PageHero>
 
-      <article className="mx-auto max-w-3xl space-y-4">
+      <article className="space-y-4">
         {radioTranscript.map((block, i) => (
           <Block key={i} block={block} onOpenVideo={setOpenVideo} />
         ))}

@@ -60,10 +60,10 @@ function Block({ block }: { block: BrissyBlock }) {
 
 export function BrissyPage() {
   return (
-    <div className="space-y-12">
+    <div className="mx-auto max-w-3xl space-y-10">
       <PageHero title="Rowing Towards Brissy ’2032" intro="A Rowing Plan" />
 
-      <article className="mx-auto max-w-3xl space-y-10">
+      <article className="space-y-10">
         <section className="space-y-4">
           {brissyIntro.map((block, i) => (
             <Block key={i} block={block} />
