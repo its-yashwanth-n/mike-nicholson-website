@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Play } from "lucide-react";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { VideoModal } from "@/components/common/VideoModal";
 import { bookList, heroBook, signingPhotos } from "@/data/books";
+import type { Film } from "@/types/content";
 
 export function BooksPage() {
+  const [openVideo, setOpenVideo] = useState<Film | null>(null);
+
   return (
     <div className="space-y-12">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
@@ -52,23 +58,11 @@ export function BooksPage() {
               key={book.title}
               className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-4 shadow-card sm:flex-row"
             >
-              {book.embedVideo ? (
-                <div className="aspect-video w-full shrink-0 overflow-hidden rounded-lg bg-ink sm:w-56">
-                  <iframe
-                    className="size-full"
-                    src={`https://player.vimeo.com/video/${book.embedVideo.id}`}
-                    title={book.title}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <img
-                  src={book.coverImg}
-                  alt={`${book.title} cover`}
-                  className="h-40 w-full shrink-0 rounded-lg object-contain sm:w-32"
-                />
-              )}
+              <img
+                src={book.coverImg}
+                alt={`${book.title} cover`}
+                className="h-40 w-full shrink-0 rounded-lg object-contain sm:w-32"
+              />
               <div className="flex flex-1 flex-col">
                 <h3 className="font-semibold text-text">{book.title}</h3>
                 {book.blurb && (
@@ -76,7 +70,7 @@ export function BooksPage() {
                     {book.blurb}
                   </p>
                 )}
-                <div className="mt-3">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {book.buyUrl && (
                     <a
                       href={book.buyUrl}
@@ -95,12 +89,29 @@ export function BooksPage() {
                       Read for FREE!
                     </Link>
                   )}
+                  {book.embedVideo && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenVideo({
+                          ...book.embedVideo!,
+                          title: `${book.title} - Trailer`,
+                        })
+                      }
+                      className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-4 py-1.5 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+                    >
+                      <Play className="size-3.5" aria-hidden="true" />
+                      Watch trailer
+                    </button>
+                  )}
                 </div>
               </div>
             </article>
           ))}
         </div>
       </section>
+
+      <VideoModal film={openVideo} onClose={() => setOpenVideo(null)} />
     </div>
   );
 }
