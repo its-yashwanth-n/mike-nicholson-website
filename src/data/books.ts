@@ -17,6 +17,13 @@ export const signingPhotos = [
 
 export const bookList: BookEntry[] = [
   {
+    title: 'Kerri and Honey',
+    coverImg: '/assets/images/books/kerri_and_honey.png',
+    blurb: "Seven children's books in one, by Joyce Nicholson.",
+    buyUrl: 'https://www.amazon.com.au/KERRI-HONEY-Seven-Childrens-Book/dp/B0HPYH351N/',
+    embedVideo: { id: '1244819537', source: 'vimeo' },
+  },
+  {
     title: 'The Mosaic Escalator',
     coverImg: '/assets/images/books/mosaic_escalator_cover.png',
     embedVideo: { id: '893214388', source: 'vimeo' },

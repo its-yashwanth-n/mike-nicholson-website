@@ -15,6 +15,13 @@ export const stores = [
 
 export const featuredBooks: BookEntry[] = [
   {
+    title: "Kerri and Honey",
+    coverImg: "/assets/images/books/kerri_and_honey.png",
+    buyUrl:
+      "https://www.amazon.com.au/KERRI-HONEY-Seven-Childrens-Book/dp/B0HPYH351N/",
+    embedVideo: { id: "1244819537", source: "vimeo" },
+  },
+  {
     title: "The Mosaic Escalator",
     coverImg: "/assets/images/books/mosaic_escalator_cover.png",
     buyUrl:
